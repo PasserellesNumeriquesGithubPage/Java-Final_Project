@@ -37,7 +37,6 @@ public final class studentDashboard extends javax.swing.JFrame {
                     v2.add(rs.getString("courseUnit"));
                     v2.add(rs.getString("MG"));
                     v2.add(rs.getString("FG"));
-                    v2.add(rs.getString("totalGrade"));
                 }
                 df.addRow(v2);
             }
@@ -74,7 +73,6 @@ public final class studentDashboard extends javax.swing.JFrame {
 
         jpanelyellow = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jpanelWhite = new javax.swing.JPanel();
         jpanelBlue = new javax.swing.JPanel();
@@ -91,14 +89,6 @@ public final class studentDashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         CompleteName = new javax.swing.JLabel();
-        DateofBirth = new javax.swing.JLabel();
-        Address = new javax.swing.JLabel();
-        Age = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
-        AcademicLevel = new javax.swing.JLabel();
-        Course = new javax.swing.JLabel();
-        Status = new javax.swing.JLabel();
-        ContactNumber = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         courseTable = new javax.swing.JTable();
@@ -108,20 +98,11 @@ public final class studentDashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1024, 768));
-        getContentPane().setLayout(null);
 
         jpanelyellow.setBackground(new java.awt.Color(253, 184, 19));
 
         jLabel3.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         jLabel3.setText("STUDENT DASHBOARD");
-
-        jButton1.setBackground(new java.awt.Color(255, 51, 0));
-        jButton1.setText("X");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student/record/srms logo blue.png"))); // NOI18N
 
@@ -130,17 +111,11 @@ public final class studentDashboard extends javax.swing.JFrame {
         jpanelyellowLayout.setHorizontalGroup(
             jpanelyellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelyellowLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
+                .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jpanelyellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelyellowLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addContainerGap(646, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelyellowLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(14, 14, 14))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addContainerGap(638, Short.MAX_VALUE))
         );
         jpanelyellowLayout.setVerticalGroup(
             jpanelyellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,16 +124,11 @@ public final class studentDashboard extends javax.swing.JFrame {
                 .addGroup(jpanelyellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                     .addGroup(jpanelyellowLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton1)
-                        .addGap(9, 9, 9)
+                        .addGap(46, 46, 46)
                         .addComponent(jLabel3)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-
-        getContentPane().add(jpanelyellow);
-        jpanelyellow.setBounds(0, 0, 964, 100);
 
         jpanelWhite.setBackground(new java.awt.Color(255, 255, 255));
         jpanelWhite.setLayout(null);
@@ -212,30 +182,6 @@ public final class studentDashboard extends javax.swing.JFrame {
         CompleteName.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         CompleteName.setText("                           ");
 
-        DateofBirth.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        DateofBirth.setText("Date of Birth");
-
-        Address.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        Address.setText("Address");
-
-        Age.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        Age.setText("Age");
-
-        Email.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        Email.setText("Email");
-
-        AcademicLevel.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        AcademicLevel.setText("Academic Level");
-
-        Course.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        Course.setText("Course");
-
-        Status.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        Status.setText("Status");
-
-        ContactNumber.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        ContactNumber.setText("Contact Number");
-
         javax.swing.GroupLayout jpanelBlueLayout = new javax.swing.GroupLayout(jpanelBlue);
         jpanelBlue.setLayout(jpanelBlueLayout);
         jpanelBlueLayout.setHorizontalGroup(
@@ -259,22 +205,9 @@ public final class studentDashboard extends javax.swing.JFrame {
                             .addComponent(emailAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(contactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jpanelBlueLayout.createSequentialGroup()
-                                .addComponent(Status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(38, 38, 38))
-                            .addComponent(Course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AcademicLevel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ContactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelBlueLayout.createSequentialGroup()
-                                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DateofBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(CompleteName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(CompleteName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jpanelBlueLayout.createSequentialGroup()
                         .addGap(0, 34, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -291,37 +224,21 @@ public final class studentDashboard extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(CompleteName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateOfBirth)
-                    .addComponent(DateofBirth))
+                .addComponent(dateOfBirth)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(age)
-                    .addComponent(Age))
+                .addComponent(age)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(address)
-                    .addComponent(Address))
+                .addComponent(address)
                 .addGap(18, 18, 18)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(status)
-                    .addComponent(Status))
+                .addComponent(status)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(course)
-                    .addComponent(Course))
+                .addComponent(course)
                 .addGap(12, 12, 12)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(academicLevel)
-                    .addComponent(AcademicLevel))
+                .addComponent(academicLevel)
                 .addGap(15, 15, 15)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailAddress)
-                    .addComponent(Email))
+                .addComponent(emailAddress)
                 .addGap(18, 18, 18)
-                .addGroup(jpanelBlueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contactNumber)
-                    .addComponent(ContactNumber))
+                .addComponent(contactNumber)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -395,15 +312,23 @@ public final class studentDashboard extends javax.swing.JFrame {
         jpanelWhite.add(jPanel2);
         jPanel2.setBounds(350, 20, 560, 30);
 
-        getContentPane().add(jpanelWhite);
-        jpanelWhite.setBounds(0, 106, 964, 370);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpanelyellow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpanelWhite, javax.swing.GroupLayout.PREFERRED_SIZE, 964, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jpanelyellow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jpanelWhite, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -414,15 +339,7 @@ public final class studentDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AcademicLevel;
-    private javax.swing.JLabel Address;
-    private javax.swing.JLabel Age;
     private javax.swing.JLabel CompleteName;
-    private javax.swing.JLabel ContactNumber;
-    private javax.swing.JLabel Course;
-    private javax.swing.JLabel DateofBirth;
-    private javax.swing.JLabel Email;
-    private javax.swing.JLabel Status;
     private javax.swing.JLabel academicLevel;
     private javax.swing.JComboBox<String> academicPeriod_CB2;
     private javax.swing.JComboBox<String> academicYear_CB1;
@@ -434,7 +351,6 @@ public final class studentDashboard extends javax.swing.JFrame {
     private javax.swing.JTable courseTable;
     private javax.swing.JLabel dateOfBirth;
     private javax.swing.JLabel emailAddress;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

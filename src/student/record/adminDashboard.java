@@ -3,6 +3,7 @@ package student.record;
 public class adminDashboard extends javax.swing.JFrame {
     public adminDashboard() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -10,7 +11,6 @@ public class adminDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -26,21 +26,10 @@ public class adminDashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(253, 184, 19));
         jPanel1.setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 0));
-        jButton1.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
-        jButton1.setText("X");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(560, 10, 40, 30);
-
         jLabel1.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         jLabel1.setText("ADMIN DASHBOARD");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(120, 30, 190, 19);
+        jLabel1.setBounds(120, 30, 190, 24);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student/record/srms logo blue.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -116,10 +105,6 @@ public class adminDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void logOut_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOut_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logOut_btnActionPerformed
@@ -165,7 +150,6 @@ public class adminDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

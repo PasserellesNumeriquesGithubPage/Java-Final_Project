@@ -9,6 +9,7 @@ public class logIn extends javax.swing.JFrame {
 
     public logIn() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -150,7 +151,7 @@ public class logIn extends javax.swing.JFrame {
         ResultSet rs;
         String email = emailTextField.getText();
         String password = String.valueOf(passwordTextField.getPassword());
-        String query = "SELECT * FROM users WHERE userEmail =? AND userPassword =?";
+        String query = "SELECT * FROM users_info WHERE userEmail =? AND userPassword =?";
         try {
             ps = StudentRecord.getConnection().prepareStatement(query);
             ps.setString(1, email);
@@ -158,7 +159,7 @@ public class logIn extends javax.swing.JFrame {
             rs = ps.executeQuery();
             if(rs.next()){
                 String ID = rs.getString(1);
-                String name = rs.getString(12);
+                String name = rs.getString(2);
                 if(rs.getString(4).equals("Admin")){
                     JOptionPane.showMessageDialog(this, "Welcome "+ name +" and id of: "+ID);
                     adminDashboard admin = new adminDashboard();
@@ -166,7 +167,9 @@ public class logIn extends javax.swing.JFrame {
                     this.dispose();
                 }else if(rs.getString(4).equals("Teacher")){
                     JOptionPane.showMessageDialog(this, "Welcome "+ name);
-                    
+                    teacherDashboard teacher = new teacherDashboard();
+                    teacher.setVisible(true);
+                    this.dispose();
                 }else{
                     JOptionPane.showMessageDialog(this, "Welcome "+ name);
                     studentDashboard student = new studentDashboard();

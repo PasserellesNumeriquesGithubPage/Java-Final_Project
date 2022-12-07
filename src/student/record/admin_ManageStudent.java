@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package student.record;
 
-/**
- *
- * @author PnPh
- */
 public class admin_ManageStudent extends javax.swing.JFrame {
 
-    /**
-     * Creates new form admin_ManageStudent
-     */
     public admin_ManageStudent() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,7 +20,6 @@ public class admin_ManageStudent extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -63,7 +53,6 @@ public class admin_ManageStudent extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 61, 167));
         jPanel1.setLayout(null);
@@ -77,20 +66,7 @@ public class admin_ManageStudent extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MANAGE STUDENTS");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(120, 40, 190, 19);
-
-        jButton4.setBackground(new java.awt.Color(255, 51, 0));
-        jButton4.setText("X");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(900, 10, 22, 22);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 931, 96);
+        jLabel2.setBounds(120, 40, 190, 24);
 
         jPanel2.setBackground(new java.awt.Color(253, 184, 19));
         jPanel2.setLayout(null);
@@ -293,14 +269,14 @@ public class admin_ManageStudent extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(320, 410, 90, 22);
+        jButton1.setBounds(320, 410, 90, 25);
 
         jButton2.setBackground(new java.awt.Color(0, 61, 167));
         jButton2.setFont(new java.awt.Font(".SF NS Text", 1, 13)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("ADD");
         jPanel2.add(jButton2);
-        jButton2.setBounds(100, 410, 72, 22);
+        jButton2.setBounds(100, 410, 72, 25);
 
         jButton3.setBackground(new java.awt.Color(0, 61, 167));
         jButton3.setFont(new java.awt.Font(".SF NS Text", 1, 13)); // NOI18N
@@ -312,22 +288,30 @@ public class admin_ManageStudent extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton3);
-        jButton3.setBounds(200, 410, 90, 22);
+        jButton3.setBounds(200, 410, 90, 25);
 
         jLabel15.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
         jLabel15.setText("STUDENT'S INFORMATION");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(510, 30, 190, 15);
+        jLabel15.setBounds(510, 30, 190, 19);
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 90, 930, 470);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 931, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -380,7 +364,6 @@ public class admin_ManageStudent extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
