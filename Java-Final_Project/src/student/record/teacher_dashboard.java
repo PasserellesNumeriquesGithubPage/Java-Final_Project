@@ -116,7 +116,11 @@ public final class teacher_dashboard extends javax.swing.JFrame {
 
     public void display_personal_information() {
         int u;
-        String query = "SELECT student_info.studentId, student_info.studentName, student_info.dateOfBirth, student_info.age, student_info.address, student_info.status,tblcourses.courseCode, academic_level.academicDescription, student_info.emailAddress, student_info.contactNumber, student_info.emergencyName, student_info.emergencyNumber, student_info.MG, student_info.FG FROM academic_level INNER JOIN student_info ON student_info.academicId = academic_level.academicId INNER JOIN tblcourses ON student_info.courseId = tblcourses.courseId where student_info.teacherId= ?";
+        String query = "SELECT student_info.studentId, student_info.studentName, student_info.dateOfBirth, student_info.age, student_info.address, "
+                + "student_info.status,tblcourses.courseCode, academic_level.academicDescription, student_info.emailAddress, student_info.contactNumber, "
+                + "student_info.emergencyName, student_info.emergencyNumber, student_info.MG, student_info.FG FROM academic_level "
+                + "INNER JOIN student_info ON student_info.academicId = academic_level.academicId "
+                + "INNER JOIN tblcourses ON student_info.courseId = tblcourses.courseId where student_info.teacherId= ?";
         try {
             ps = StudentRecord.getConnection().prepareStatement(query);
             ps.setString(1, myID.getText());
@@ -230,7 +234,7 @@ public final class teacher_dashboard extends javax.swing.JFrame {
         id.setForeground(new java.awt.Color(0, 61, 167));
         id.setText("Student's Name: ");
         jPanel1.add(id);
-        id.setBounds(240, 20, 104, 18);
+        id.setBounds(240, 20, 102, 18);
 
         User.setFont(new java.awt.Font("Helvetica", 3, 13)); // NOI18N
         User.setForeground(new java.awt.Color(255, 255, 255));
@@ -264,6 +268,8 @@ public final class teacher_dashboard extends javax.swing.JFrame {
         });
         jPanel1.add(exit);
         exit.setBounds(1140, 20, 40, 30);
+
+        myID.setForeground(new java.awt.Color(0, 61, 167));
         jPanel1.add(myID);
         myID.setBounds(120, 20, 110, 20);
 
@@ -639,6 +645,7 @@ public final class teacher_dashboard extends javax.swing.JFrame {
             String fg = FG.getText();
             String IDs = getId(id.getText());
             String teacherId = myID.getText();
+            System.out.println("ID: "+IDs);
             if (Email.equals("") | Password.equals("") | Studentname.equals("") | Dateofbirth == null | Age.equals("") | Address.equals("") | Status.equals("") | Emailaddress.equals("") | Contactnumber.equals("") | Emergencyname.equals("") | Emergencynumber.equals("")) {
                 JOptionPane.showMessageDialog(this, "Please Field up the required information!");
             } else {
@@ -664,7 +671,7 @@ public final class teacher_dashboard extends javax.swing.JFrame {
                             ps = StudentRecord.getConnection().prepareStatement(query4);
                             ps.setString(1, Email);
                             ps.setString(2, Password);
-                            ps.setString(3, "3");
+                            ps.setString(3, "2");
                             ps.setString(4, teacherId);
                             int i = ps.executeUpdate();
                             if (i > 0) {
@@ -732,7 +739,7 @@ public final class teacher_dashboard extends javax.swing.JFrame {
             String query = "SELECT * FROM `tblcourses` WHERE `courseCode` = ?";
             if (Email.equals("") | Password.equals("") | Studentname.equals("") | Dateofbirth == null | Age.equals("") | Address.equals("") | Status.equals("") | Emailaddress.equals("") | Contactnumber.equals("") | Emergencyname.equals("") | Emergencynumber.equals("")) {
                 JOptionPane.showMessageDialog(this, "Please Field up the required information!");
-            } else {
+            }  else {
                 ps = StudentRecord.getConnection().prepareStatement(query);
                 ps.setString(1, Course);
                 rs = ps.executeQuery();

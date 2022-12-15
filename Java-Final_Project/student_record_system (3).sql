@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 04:55 AM
+-- Generation Time: Dec 15, 2022 at 12:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -123,12 +123,9 @@ CREATE TABLE `student_info` (
 --
 
 INSERT INTO `student_info` (`studentId`, `studentName`, `dateOfBirth`, `age`, `address`, `status`, `emailAddress`, `contactNumber`, `emergencyName`, `emergencyNumber`, `usersId`, `courseId`, `academicId`, `teacherId`, `MG`, `FG`) VALUES
-(1, 'Lorgem Bosque', '2022-06-03', 21, 'Samjung', 'Single', 'lor@gmail.com', 96325874101, 'lore', 90123456789, 9, 7, 1, 2, '0', '0'),
-(2, 'Janrae Fagaran', '2022-12-10', 30, 'catbalogan', 'Single', 'JanrAE@gmail.com', 96325632563, 'jarith', 98741014789, 2, 7, 1, 2, '0', '0'),
-(3, 'Ethyl Sotero', '2022-07-12', 22, 'SAmung', 'Single', 'stos@gmail.com', 9585847473, 'oretos', 94521896351, 8, 1, 1, 4, '0', '0'),
-(4, 'John rey calesa', '2022-12-01', 36, 'Catlbo', 'Single', 'rey@gmail.com', 96584258741, 'cals', 95874563258, 12, 5, 1, 5, 'INC', '1.0'),
-(5, 'Via Enopia', '2017-12-14', 22, 'Lapu lapu', 'Single', 'Vi@gmail.com', 98576756461, 'Enops', 91234756253, 13, 4, 1, 2, '0', '0'),
-(13, 'Via Enopia', '2017-12-14', 22, 'Lapu lapu', 'Single', 'Vi@gmail.com', 98576756461, 'Enops', 91234756253, 13, 1, 1, 2, '0', '0');
+(1, 'Lorgem', '2029-09-19', 20, 'Cebu', 'Single', 'Bosque@gmail.com', 97845263521, 'gema', 96589625365, 3, 1, 1, 1, 'INC', '1.3'),
+(2, 'Mark Joseph Molina', '2011-12-02', 20, 'Leyte', 'Widowed', 'JosephPIYOS@gmail.com', 95847364532, 'chemss', 95746535243, 8, 5, 1, 2, '1.2', '3.0'),
+(3, 'Julecenio', '2009-05-01', 40, 'Samjungs nasipits', 'Single', 'Jule@gmail.com', 987654321, 'Est', 912345678, 3, 4, 2, 3, '1.2', '1.3');
 
 -- --------------------------------------------------------
 
@@ -183,9 +180,9 @@ CREATE TABLE `teacher_info` (
 --
 
 INSERT INTO `teacher_info` (`teacherId`, `teacherName`, `dateOfBirth`, `age`, `address`, `status`, `degreeFinished`, `emailAddress`, `contactNumber`, `emergencyName`, `emergencyNumber`, `courseHandled`, `userId`) VALUES
-(1, 'Omne', '2001-09-12', 21, 'Negros', 'Single', 'Bachelor of Science in Education', 'OmneJeanPelingon@gmail.com', 97845263521, 'Jean', 96589625365, 'BSE', 2),
-(2, 'Van', '2001-05-24', 21, 'Bohol', 'Single', 'Bachelor in Computer Science', 'Sagolili@gmail.com', 96325698154, 'Vanvan', 96589251563, 'C CT', 4),
-(3, 'loren', '1999-01-08', 23, 'Dalaguete', 'Single', 'Bachelor of Religious Education', 'lorenfeCua@gmail.com', 96521586325, 'Cuadero', 95841256365, 'BRE', 5);
+(1, 'Omne Pelingon', '2015-12-17', 20, 'Negros', 'Single', 'Bachelor of Arts and Industry', 'Jean@gmail.com', 9631198435, 'JEana', 9484917114, 'C CT', 2),
+(2, 'Victor', '2022-12-08', 30, 'Talamban', 'Single', 'chuchu', 'victor@gmail.com', 987654321, 'victorrr', 987654321, 'BRE', 4),
+(3, 'christine', '2022-07-05', 30, 'Talamban', 'Single', 'chuchu', 'martonia@gmail.com', 987654321, 'BLeh', 987654321, 'BSc', 9);
 
 -- --------------------------------------------------------
 
@@ -206,26 +203,12 @@ CREATE TABLE `users_info` (
 
 INSERT INTO `users_info` (`userId`, `userEmail`, `userPassword`, `roleId`) VALUES
 (1, 'Chemuel', '123', 1),
-(2, 'Omne', '123', 2),
-(3, 'Lorgem', '123', 3),
-(4, 'Vanessa', '123', 2),
-(5, 'Lorenfe', '123', 2),
-(6, 'Janrae', '123', 3),
-(7, 'Joshua', '147', 3),
-(8, 'Ethyl', 'Sots', 3),
-(9, 'lorgem23', '123', 3),
-(10, 'Janrae', '123', 3),
-(11, 'Ethyl', '123', 3),
-(12, 'John rey', '123', 3),
-(13, 'Via', '123', 3),
-(14, 'Via', '123', 3),
-(15, 'Via', '123', 3),
-(16, 'Via', '123', 3),
-(17, 'Via', '123', 3),
-(18, 'Via', '123', 3),
-(19, 'Via', '123', 3),
-(20, 'Via', '123', 3),
-(21, 'Via', '123', 3);
+(2, 'Omne', '456', 2),
+(3, 'Juls', '123', 2),
+(4, 'Victor@gmail.com', '123', 2),
+(8, 'Mark', 'piyos', 3),
+(9, 'Christine', '123', 2),
+(10, 'Juls', '123', 3);
 
 --
 -- Indexes for dumped tables
@@ -257,7 +240,8 @@ ALTER TABLE `student_info`
   ADD PRIMARY KEY (`studentId`),
   ADD KEY `teacherId` (`teacherId`) USING BTREE,
   ADD KEY `courseId` (`courseId`,`academicId`) USING BTREE,
-  ADD KEY `usersId` (`usersId`);
+  ADD KEY `usersId` (`usersId`),
+  ADD KEY `student_info_ibfk_1` (`academicId`);
 
 --
 -- Indexes for table `tblcourses`
@@ -293,7 +277,7 @@ ALTER TABLE `academic_level`
 -- AUTO_INCREMENT for table `admin_info`
 --
 ALTER TABLE `admin_info`
-  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `role_table`
@@ -305,7 +289,7 @@ ALTER TABLE `role_table`
 -- AUTO_INCREMENT for table `student_info`
 --
 ALTER TABLE `student_info`
-  MODIFY `studentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `studentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblcourses`
@@ -323,7 +307,7 @@ ALTER TABLE `teacher_info`
 -- AUTO_INCREMENT for table `users_info`
 --
 ALTER TABLE `users_info`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
@@ -335,7 +319,8 @@ ALTER TABLE `users_info`
 ALTER TABLE `student_info`
   ADD CONSTRAINT `student_info_ibfk_1` FOREIGN KEY (`academicId`) REFERENCES `academic_level` (`academicId`),
   ADD CONSTRAINT `student_info_ibfk_3` FOREIGN KEY (`courseId`) REFERENCES `tblcourses` (`courseId`),
-  ADD CONSTRAINT `student_info_ibfk_4` FOREIGN KEY (`usersId`) REFERENCES `users_info` (`userId`);
+  ADD CONSTRAINT `student_info_ibfk_4` FOREIGN KEY (`usersId`) REFERENCES `users_info` (`userId`),
+  ADD CONSTRAINT `student_info_ibfk_5` FOREIGN KEY (`teacherId`) REFERENCES `teacher_info` (`teacherId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

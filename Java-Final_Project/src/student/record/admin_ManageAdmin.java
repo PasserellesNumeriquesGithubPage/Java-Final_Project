@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package student.record;
 
 import java.awt.HeadlessException;
@@ -660,14 +656,14 @@ public class admin_ManageAdmin extends javax.swing.JFrame {
                 ps = StudentRecord.getConnection().prepareStatement(UPDATE_users_info);
                 ps.setString(1, Email);
                 ps.setString(2, Password);
-                ps.setString(3, "2");
+                ps.setString(3, "1");
                 ps.setString(4, IDs);
                 int i = ps.executeUpdate();
                 if (i > 0) {
-                    String UPDATE_teachers_info = "UPDATE admin_info SET adminName=?, dateOfBirth=?, age=?, address=?, status=?, degreeFinished=?, emailAddress=?, contactNumber=?, emergencyName=?, emergencyNumber=?, courseHandled=? WHERE teacherId=?";
+                    String UPDATE_admin_info = "UPDATE admin_info SET adminName=?, dateOfBirth=?, age=?, address=?, status=?, degreeFinished=?, emailAddress=?, contactNumber=?, emergencyName=?, emergencyNumber=? WHERE adminId=?";
                     int row = adminInformation.getSelectedRow();
                     String value = (adminInformation.getModel().getValueAt(row, 0).toString());
-                    ps = StudentRecord.getConnection().prepareStatement(UPDATE_teachers_info);
+                    ps = StudentRecord.getConnection().prepareStatement(UPDATE_admin_info);
                     ps.setString(1, Teachername);
                     ps.setString(2, Dateofbirth);
                     ps.setString(3, Age);

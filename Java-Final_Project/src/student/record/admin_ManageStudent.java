@@ -160,8 +160,6 @@ public final class admin_ManageStudent extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
-        User = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         logout = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -232,18 +230,7 @@ public final class admin_ManageStudent extends javax.swing.JFrame {
         id.setForeground(new java.awt.Color(0, 61, 167));
         id.setText("Student's Name: ");
         jPanel1.add(id);
-        id.setBounds(120, 20, 104, 18);
-
-        User.setFont(new java.awt.Font("Helvetica", 3, 13)); // NOI18N
-        User.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(User);
-        User.setBounds(220, 40, 120, 30);
-
-        jLabel18.setFont(new java.awt.Font("Helvetica", 3, 13)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("HELLO MR/MS: ");
-        jPanel1.add(jLabel18);
-        jLabel18.setBounds(120, 40, 120, 30);
+        id.setBounds(120, 20, 102, 18);
 
         logout.setBackground(new java.awt.Color(255, 51, 0));
         logout.setText("LOG OUT");
@@ -729,7 +716,6 @@ public final class admin_ManageStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_updateButtonActionPerformed
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         try {
-            dateOfBirth.setCalendar(Calendar.getInstance());
             Date date = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String Email = email.getText();
@@ -933,7 +919,6 @@ public final class admin_ManageStudent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FG;
     private javax.swing.JTextField MG;
-    public javax.swing.JLabel User;
     private javax.swing.JTextField academicLevel;
     private javax.swing.JButton addButton;
     private javax.swing.JTextField address;
@@ -957,7 +942,6 @@ public final class admin_ManageStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

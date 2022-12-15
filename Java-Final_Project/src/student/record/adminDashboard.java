@@ -11,9 +11,7 @@ public class adminDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -22,6 +20,7 @@ public class adminDashboard extends javax.swing.JFrame {
         manageTeacher_btn = new javax.swing.JButton();
         logOut_btn = new javax.swing.JButton();
         manageAdmin = new javax.swing.JButton();
+        manageAdmin1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -29,19 +28,10 @@ public class adminDashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(253, 184, 19));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(230, 30, 145, 24);
-
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student/record/srms logo blue.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(10, 0, 90, 80);
-
-        jLabel4.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
-        jLabel4.setText("LOGGING IN AS:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(110, 30, 145, 24);
 
         exit.setBackground(new java.awt.Color(255, 51, 0));
         exit.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
@@ -100,6 +90,15 @@ public class adminDashboard extends javax.swing.JFrame {
             }
         });
 
+        manageAdmin1.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        manageAdmin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student/record/teacher icon.png"))); // NOI18N
+        manageAdmin1.setText("Manage Courses");
+        manageAdmin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageAdmin1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -111,21 +110,24 @@ public class adminDashboard extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(logOut_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(manageTeacher_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                        .addComponent(manageAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)))
+                        .addComponent(manageAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                        .addComponent(manageAdmin1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
                 .addComponent(manageStudent_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(manageTeacher_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(manageAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(manageAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logOut_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,7 +158,6 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void manageStudent_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageStudent_btnActionPerformed
         admin_ManageStudent student = new admin_ManageStudent();
-        student.User.setText(jLabel1.getText());
         student.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_manageStudent_btnActionPerformed
@@ -176,6 +177,12 @@ public class adminDashboard extends javax.swing.JFrame {
         admin.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_manageAdminActionPerformed
+
+    private void manageAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageAdmin1ActionPerformed
+          admin_ManageCourse course = new admin_ManageCourse();
+          course.setVisible(true);
+          this.dispose();
+    }//GEN-LAST:event_manageAdmin1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,15 +222,14 @@ public class adminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exit;
-    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logOut_btn;
     private javax.swing.JButton manageAdmin;
+    private javax.swing.JButton manageAdmin1;
     private javax.swing.JButton manageStudent_btn;
     private javax.swing.JButton manageTeacher_btn;
     // End of variables declaration//GEN-END:variables

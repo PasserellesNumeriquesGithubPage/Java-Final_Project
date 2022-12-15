@@ -167,39 +167,56 @@ public class logIn extends javax.swing.JFrame {
                     ps = StudentRecord.getConnection().prepareStatement(additionalSecurity);
                     ps.setString(1, ID);
                     rs = ps.executeQuery();
-                    if (rs.next()){
+                    if (rs.next()) {
                         String verificationEmail = rs.getString(1);
                         String inputEmail = JOptionPane.showInputDialog(this, "Enter your Email:");
-                        if(inputEmail.contains(verificationEmail)){
-                        JOptionPane.showMessageDialog(this, "Welcome " + name);
-                        adminDashboard admin = new adminDashboard();
-                        admin.jLabel1.setText(name);
-                        admin.setVisible(true);
-                        this.dispose();
-                        }else{
+                        if (inputEmail.contains(verificationEmail)) {
+                            JOptionPane.showMessageDialog(this, "Welcome " + name);
+                            adminDashboard admin = new adminDashboard();
+                            admin.setVisible(true);
+                            this.dispose();
+                        } else {
                             JOptionPane.showMessageDialog(this, "Exiting Program!");
                             System.exit(0);
                         }
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(this, "Cannot find!");
                     }
                 } else if (rs.getString(4).equals("2")) {
-                    JOptionPane.showMessageDialog(this, "Welcome " + name);
-                    teacher_dashboard teacher = new teacher_dashboard();
-                    teacher.myID.setText(ID);
-                    teacher.User.setText(name);
-                    teacher.setVisible(true);
-                    this.dispose();
+                    String teacherinfo = "SELECT teacher_info.teacherName, teacher_info.teacherId FROM teacher_info INNER JOIN users_info ON teacher_info.userId = users_info.userId WHERE teacher_info.userId = ?";
+                    ps = StudentRecord.getConnection().prepareStatement(teacherinfo);
+                    ps.setString(1, ID);
+                    rs = ps.executeQuery();
+                    if (rs.next()) {
+                        String Name = rs.getString(1);
+                        String teacherID = rs.getString(2);
+                        JOptionPane.showMessageDialog(this, "Welcome " + Name);
+                        teacher_dashboard teacher = new teacher_dashboard();
+                        teacher.myID.setText(teacherID);
+                        teacher.User.setText(Name);
+                        teacher.setVisible(true);
+                        this.dispose();
+                    }
                 } else if (rs.getString(4).equals("3")) {
-                    JOptionPane.showMessageDialog(this, "Welcome " + name);
-                    studentDashboard student = new studentDashboard();
-                    student.id.setText(ID);
-                    student.jLabel3.setText(name);
-                    student.setVisible(true);
-                    this.dispose();
+                    String studentInfo = "SELECT student_info.studentName, student_info.studentId FROM student_info INNER JOIN users_info ON student_info.usersId = users_info.userId WHERE student_info.usersId = ?";
+                    ps = StudentRecord.getConnection().prepareStatement(studentInfo);
+                    ps.setString(1, ID);
+                    rs = ps.executeQuery();
+                    if (rs.next()) {
+                        String Name = rs.getString(1);
+                        String studentID = rs.getString(2);
+                        JOptionPane.showMessageDialog(this, "Welcome " + Name);
+                        studentDashboard student = new studentDashboard();
+                        student.id.setText(studentID);
+                        student.jLabel3.setText(Name);
+                        student.setVisible(true);
+                        this.dispose();
+                    }
                 } else {
                     JOptionPane.showMessageDialog(this, "Email " + email + " is not found!");
                 }
+            } else {
+                JOptionPane.showMessageDialog(this, "Wrong Username or Password!");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Error in Logging In");

@@ -5,9 +5,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -19,12 +16,15 @@ public final class studentDashboard extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-    private void users_update(){
+    private void users_update() {
         String i = id.getText();
         PreparedStatement ps;
         ResultSet rs;
         int u;
-        String query = "SELECT tblcourses.courseCode, tblcourses.courseDescription, tblcourses.courseUnit, student_info.MG, student_info.FG FROM student_info INNER JOIN tblcourses ON student_info.courseId = tblcourses.courseId WHERE student_info.usersId = ?";
+        String query = "SELECT tblcourses.courseCode, tblcourses.courseDescription, tblcourses.courseUnit, student_info.MG, student_info.FG "
+                + "FROM student_info "
+                + "INNER JOIN tblcourses ON student_info.courseId = tblcourses.courseId "
+                + "WHERE student_info.studentId = ?";
         try {
             ps = StudentRecord.getConnection().prepareStatement(query);
             ps.setString(1, i);
@@ -50,11 +50,15 @@ public final class studentDashboard extends javax.swing.JFrame {
         }
     }
 
-    public void display_personal_information(){
+    public void display_personal_information() {
         PreparedStatement ps;
         ResultSet rs;
         String i = id.getText();
-        String query = "SELECT student_info.studentName, student_info.dateOfBirth, student_info.age, student_info.address, student_info.status, tblcourses.courseCode, academic_level.academicDescription, student_info.emailAddress, student_info.contactNumber, student_info.emergencyName, student_info.emergencyNumber, tblcourses.courseDescription, tblcourses.courseUnit, student_info.MG, student_info.FG FROM student_info INNER JOIN tblcourses ON student_info.courseId = tblcourses.courseId INNER JOIN academic_level ON student_info.academicId = academic_level.academicId WHERE student_info.usersId =?";
+        String query = "SELECT student_info.studentName, student_info.dateOfBirth, student_info.age, student_info.address, "
+                + "student_info.status, tblcourses.courseCode, academic_level.academicDescription, student_info.emailAddress, "
+                + "student_info.contactNumber, student_info.emergencyName, student_info.emergencyNumber, tblcourses.courseDescription, "
+                + "tblcourses.courseUnit, student_info.MG, student_info.FG FROM student_info INNER JOIN tblcourses ON student_info.courseId = tblcourses.courseId "
+                + "INNER JOIN academic_level ON student_info.academicId = academic_level.academicId WHERE student_info.studentId =?";
         try {
             ps = StudentRecord.getConnection().prepareStatement(query);
             ps.setString(1, i);
@@ -438,10 +442,10 @@ public final class studentDashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(studentTable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 10, 540, 370);
+        jScrollPane1.setBounds(10, 10, 630, 370);
 
         jpanelWhite.add(jPanel1);
-        jPanel1.setBounds(350, 20, 560, 390);
+        jPanel1.setBounds(350, 20, 650, 390);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
